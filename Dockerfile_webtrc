@@ -1,0 +1,8 @@
+FROM node:8.11.1
+
+RUN mkdir /app
+WORKDIR /app
+RUN git clone https://github.com/andyet/signalmaster.git
+WORKDIR signalmaster
+RUN npm install
+
