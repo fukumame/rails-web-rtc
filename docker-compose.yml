@@ -34,7 +34,6 @@ services:
       - ./nginx_conf:/etc/nginx/conf.d
     ports:
       - "80:80"
-    tty: true
     depends_on:
       - web-rtc
       - web
