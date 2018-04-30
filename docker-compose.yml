@@ -12,7 +12,7 @@ services:
     environment:
       DATABASE_URL: postgres://postgres:@db
     volumes:
-      - .:/app:cached
+      - .:/opt/project:cached
       - bundle:/usr/local/bundle
     tty: true
     stdin_open: true

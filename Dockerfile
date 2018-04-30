@@ -6,7 +6,7 @@ RUN apt-get update -qq && \
     npm install -g n && \
     n stable && \
     npm install -g yarn && \
-    mkdir /app && \
+    mkdir /opt/project && \
      echo 'alias be="bundle exec"' >> ~/.bashrc; \
      echo " \n\
      if defined?(PryByebug) \n\
@@ -16,7 +16,7 @@ RUN apt-get update -qq && \
         Pry.commands.alias_command 'c', 'continue' \n\
      end" >> ~/.pryrc
 
-WORKDIR /app
+WORKDIR /opt/project
 # COPY Gemfile /app/Gemfile
 # COPY Gemfile.lock /app/Gemfile.lock
 # RUN bundle install

@@ -12,8 +12,7 @@ module App
     config.load_defaults 5.2
 
     config.generators do |g|
-      g.stylesheets false
-      g.javascripts false
+      g.assets false
       g.helper false
       g.test_framework false
       g.template_engine false
