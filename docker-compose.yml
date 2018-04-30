@@ -12,8 +12,10 @@ services:
     environment:
       DATABASE_URL: postgres://postgres:@db
     volumes:
-      - .:/app
+      - .:/app:cached
       - bundle:/usr/local/bundle
+    tty: true
+    stdin_open: true
     ports:
       - "3000:3000"
     depends_on:
