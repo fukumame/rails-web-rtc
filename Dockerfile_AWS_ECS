@@ -1,0 +1,20 @@
+FROM ruby:2.5.0
+RUN apt-get update -qq && \
+    apt-get install -y build-essential libpq-dev && \
+    curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
+    apt-get install -y nodejs && \
+    npm install -g n && \
+    n stable && \
+    npm install -g yarn && \
+    mkdir /app && \
+    echo 'alias be="bundle exec"' >> ~/.bashrc
+
+WORKDIR /app
+COPY Gemfile /app/Gemfile
+COPY Gemfile.lock /app/Gemfile.lock
+RUN bundle install
+COPY . /app
+
+RUN yarn install && ./bin/webpack && \
+    RAILS_ENV=${RAILS_ENV} bundle exec rake assets:precompile
+CMD ["bundle", "exec", "rails", "s", "puma", "-b", "0.0.0.0", "-p", "3000", "-e", "${RAILS_ENV}"]
