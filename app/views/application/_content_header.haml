@@ -1,0 +1,6 @@
+.row.justify-content-end.mt-3.mb-2
+  - if user_signed_in?
+    .col-3.text-right
+      = link_to "Sign out", destroy_user_session_path, method: :delete, class: 'btn btn-light'
+
+

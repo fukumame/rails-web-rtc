@@ -1,0 +1,23 @@
+.row.mb-2
+  .col
+    = link_to 'New Room', new_room_path, class: 'btn btn-info'
+.row
+  .col
+    %table.table.table-striped
+      %thead
+        %tr
+          %td
+            Name
+          %td
+            URL
+          %td
+            Actions
+      %tbody
+        - @rooms.each do |room|
+          %tr
+            %td
+              = room.name
+            %td
+              = room_path(room.key)
+            %td
+              = link_to 'Join', room_path(room.key), class: 'btn btn-primary'
