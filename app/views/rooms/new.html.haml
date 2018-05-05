@@ -1,7 +1,13 @@
-= form_for @room do |f|
-  .form-group
-    = f.label 'name'
-    = f.text_field 'name', class: 'form-control'
-  .form-group
-    = f.label 'key'
-    = f.text_field 'key', class: 'form-control'
+.row
+  .col
+    = render 'application/model_errors', model: @room
+.row
+  .col
+    = form_for @room do |f|
+      .form-group
+        = f.label 'name'
+        = f.text_field 'name', class: 'form-control'
+      .form-group
+        = f.label 'key'
+        = f.text_field 'key', class: 'form-control'
+      = f.submit 'Create', class: 'btn btn-primary'

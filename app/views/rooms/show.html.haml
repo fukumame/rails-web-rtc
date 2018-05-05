@@ -1,0 +1,8 @@
+- content_for :header do
+  = javascript_include_tag 'https://webrtc.github.io/adapter/adapter-latest.js'
+  = javascript_include_tag 'https://simplewebrtc.com/latest-v3.js'
+  %script
+    = render 'webrtc_settings.js', room_key: @room.key
+.local-video-container
+  %video#localVideo{:playsinline => "true"}
+#remotesVideos

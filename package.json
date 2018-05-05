@@ -2,7 +2,10 @@
   "name": "app",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "3.4"
+    "@rails/webpacker": "3.4",
+    "clipboard": "^2.0.1",
+    "jquery": "^3.3.1",
+    "simplewebrtc": "^3.0.1"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"

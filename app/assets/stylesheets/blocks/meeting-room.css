@@ -1,0 +1,30 @@
+.local-video-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  width: 80%;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#localVideo {
+  width: 100%;
+  height: 100%;
+}
+
+#remotesVideos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.videoContainer {
+  margin-right: 10px;
+}
+
+.remote-video {
+  width: 300px;
+}

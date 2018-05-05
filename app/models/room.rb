@@ -17,7 +17,7 @@
 
 class Room < ApplicationRecord
   belongs_to :user
-  validates :key, uniqueness: true
+  validates :key, uniqueness: true, presence: true
 
   def generate_key
     tmp_key = SecureRandom.urlsafe_base64(20)

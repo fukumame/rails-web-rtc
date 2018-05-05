@@ -1,3 +1,7 @@
+.row
+  .col
+    %h1.main__header1
+      Meeting Rooms
 .row.mb-2
   .col
     = link_to 'New Room', new_room_path, class: 'btn btn-info'
@@ -15,9 +19,11 @@
       %tbody
         - @rooms.each do |room|
           %tr
-            %td
+            %td.align-middle
               = room.name
-            %td
-              = room_path(room.key)
-            %td
-              = link_to 'Join', room_path(room.key), class: 'btn btn-primary'
+            %td.align-middle
+              = room_url(room.key)
+            %td.align-middle
+              = link_to 'Join Room', room_path(room.key), class: 'btn btn-primary'
+              = button_tag 'Copy URL', data: { 'clipboard-text' => room_url(room.key) }, class: 'clipboard-btn btn btn-info'
+              = link_to 'Delete', room_path(room.key),method: :delete, data: { confirm: 'Delete this room?' }, class: 'btn btn-secondary'

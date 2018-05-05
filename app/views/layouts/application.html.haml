@@ -5,8 +5,10 @@
     %title App
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = javascript_pack_tag 'application'
+    = yield :header
   %body
     .container.root-container
       .row
@@ -14,4 +16,5 @@
           = render 'application/content_header'
       .row
         .col
+          = render 'application/flash_messages'
           = yield
