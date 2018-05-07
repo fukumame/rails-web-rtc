@@ -27,6 +27,9 @@
 #
 
 class User < ApplicationRecord
+
+  validates_format_of :email, with: /@cast-er.com\z/, message: 'ドメインが正しくありません'
+
   has_many :rooms, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -43,7 +46,7 @@ class User < ApplicationRecord
                       access_token: auth.credentials.token,
                       password: Devise.friendly_token[0, 20])
       # user.skip_confirmation!
-      user.save!
+      user.save
     end
     user
   end
