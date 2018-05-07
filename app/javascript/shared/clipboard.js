@@ -1,4 +1,7 @@
 import Clipboard from 'clipboard'
 $(function(){
-  new Clipboard('.clipboard-btn');
+  const cp = new Clipboard('.clipboard-btn');
+  cp.on( "success", function() {
+    alert( "コピーしました！" ) ;
+  } ) ;
 });

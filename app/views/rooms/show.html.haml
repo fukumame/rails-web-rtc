@@ -3,6 +3,18 @@
   = javascript_include_tag 'https://simplewebrtc.com/latest-v3.js'
   %script
     = render 'webrtc_settings.js', room_key: @room.key
-.local-video-container
-  %video#localVideo{:playsinline => "true"}
-#remotesVideos
+.row
+  .col
+    %h1.main__header1
+      = "Room Name: #{@room.name || "(none)"}"
+.row
+  .col
+    .text-right
+      = link_to 'Back', rooms_path, class: "btn btn-light"
+.row
+  .col
+    .local-video-container
+      %video#localVideo{:playsinline => "true"}
+.row
+  .col
+    #remotesVideos
