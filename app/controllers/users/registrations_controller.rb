@@ -1,18 +1,19 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+  include Exceptions
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   def new
-    super
+    raise Forbidden
   end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    raise Forbidden
+  end
 
   # GET /resource/edit
   # def edit

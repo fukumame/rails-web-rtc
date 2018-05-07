@@ -36,7 +36,7 @@ class RoomsController < ApplicationController
   end
 
   def set_room
-    @room = Room.find_by(key: params[:key])
+    @room = Room.find_by!(key: params[:key])
   end
 
 end

@@ -15,7 +15,7 @@ module App
       g.assets false
       g.helper false
       g.test_framework false
-      g.template_engine false
+      g.template_engine :haml
     end
 
     # Settings in config/environments/* take precedence over those specified here.
